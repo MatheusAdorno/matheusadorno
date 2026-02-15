@@ -5,7 +5,8 @@ const areas = [
   {
     icon: BookOpen,
     title: "Educação em Saúde",
-    description: "Desenvolvimento de materiais educativos baseados em evidência científica.",
+    description:
+      "Produção de conteúdo acessível, didático e baseado em evidências, voltado para pacientes, familiares e comunidade médica.",
   },
   {
     icon: Database,
