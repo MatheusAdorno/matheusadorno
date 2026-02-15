@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const AboutSection = () => {
   return (
-    <section id="sobre" className="py-16 md:py-24 lg:py-32">
+    <section id="sobre" className="py-20 md:py-28 lg:py-36">
       <div className="container mx-auto px-4 sm:px-6 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -11,11 +11,11 @@ const AboutSection = () => {
           transition={{ duration: 0.7 }}
           className="max-w-3xl mx-auto"
         >
-          <h2 className="font-heading text-sm tracking-[0.2em] uppercase text-muted-foreground mb-8 md:mb-12 text-center">
+          <h2 className="font-heading text-sm tracking-[0.2em] uppercase text-muted-foreground mb-10 md:mb-14 text-center">
             Sobre
           </h2>
 
-          <div className="space-y-5 md:space-y-6 text-base md:text-lg leading-relaxed text-foreground/85 font-body font-light text-center">
+          <div className="space-y-6 md:space-y-7 text-base md:text-lg leading-relaxed text-foreground/85 font-body font-light text-center md:text-left">
             <p>
               Sou médico graduado pela Faculdade Israelita de Ciências da Saúde Albert Einstein, com formação complementar em pesquisa e inovação em saúde.
             </p>
