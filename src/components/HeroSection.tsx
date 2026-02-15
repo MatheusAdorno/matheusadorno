@@ -1,11 +1,7 @@
 import { motion } from "framer-motion";
 import doctorPlaceholder from "@/assets/doctor-placeholder.jpg";
 
-const buttons = [
-  { label: "Para Pacientes" },
-  { label: "Para Médicos" },
-  { label: "Projetos Tecnológicos" },
-];
+const buttons = [{ label: "Para Pacientes" }, { label: "Para Médicos" }, { label: "Projetos Tecnológicos" }];
 
 const HeroSection = () => {
   return (
@@ -19,10 +15,11 @@ const HeroSection = () => {
             className="flex-1 text-center md:text-left"
           >
             <h1 className="font-heading text-3xl sm:text-4xl lg:text-[3.25rem] leading-tight tracking-tight text-foreground text-balance max-w-xl">
-              Oftalmologia baseada em evidência, tecnologia e educação.
+              Oftalmologia guiada por evidências, tecnologia e educação.
             </h1>
             <p className="mt-5 md:mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto md:mx-0 font-body font-light">
-              Médico em formação no Instituto Suel Abujamra, com trajetória em pesquisa, ciência de dados e inovação em saúde.
+              Residente em Oftalmologia no Instituto Suel Abujamra, com formação em pesquisa, ciência de dados e
+              inovação em saúde.{" "}
             </p>
 
             <div className="mt-8 md:mt-10 flex flex-wrap justify-center md:justify-start gap-3 md:gap-4">
