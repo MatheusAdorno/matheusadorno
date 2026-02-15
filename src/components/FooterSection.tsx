@@ -5,15 +5,9 @@ const FooterSection = () => {
     <footer className="py-14 md:py-20 border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-16">
         <div className="flex flex-col items-center text-center space-y-5">
-          <p className="font-heading text-base md:text-lg text-foreground">
-            Dr. Matheus Ribeiro Adorno Silva
-          </p>
-          <p className="text-sm text-muted-foreground font-body">
-            Médico · Oftalmologia · São Paulo, Brasil
-          </p>
-          <p className="text-xs text-muted-foreground font-body">
-            CRM em andamento
-          </p>
+          <p className="font-heading text-base md:text-lg text-foreground">Dr. Matheus Ribeiro Adorno Silva</p>
+          <p className="text-sm text-muted-foreground font-body">Médico · Oftalmologia · São Paulo, Brasil</p>
+          <p className="text-xs text-muted-foreground font-body">CRM/SP 259248 </p>
 
           <div className="flex gap-5 pt-4">
             <a
