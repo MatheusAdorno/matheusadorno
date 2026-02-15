@@ -73,7 +73,6 @@ const FormationSection = () => {
                       <p className="mt-2 text-sm text-muted-foreground font-light">{item.role}</p>
                       <p className="text-xs text-muted-foreground/70 font-body mt-1">{item.date}</p>
                     </div>
-                    <p className="mt-2 text-sm text-muted-foreground font-light">{item.role}</p>
                   </div>
                 </motion.div>
               ))}
