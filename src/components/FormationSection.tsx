@@ -6,11 +6,13 @@ const education = [
     icon: Eye,
     institution: "Instituto Suel Abujamra",
     role: "Residência Médica em Oftalmologia",
+    date: "2025–2028",
   },
   {
     icon: GraduationCap,
     institution: "Faculdade Israelita de Ciências da Saúde Albert Einstein",
     role: "Graduação em Medicina",
+    date: "2019–2024",
   },
 ];
 
@@ -19,11 +21,13 @@ const complementary = [
     icon: Building2,
     institution: "Hospital Israelita Albert Einstein",
     role: "Iniciação Científica em Inteligência Artificial — PROADI-SUS",
+    date: "2021–2023",
   },
   {
     icon: Lightbulb,
     institution: "Eretz.bio",
     role: "Estágio em Inovação em Saúde",
+    date: "2022",
   },
 ];
 
@@ -62,9 +66,13 @@ const FormationSection = () => {
                   </div>
 
                   <div>
-                    <h4 className="font-heading text-base md:text-lg text-foreground leading-snug">
-                      {item.institution}
-                    </h4>
+                    <div>
+                      <h4 className="font-heading text-base md:text-lg text-foreground leading-snug">
+                        {item.institution}
+                      </h4>
+                      <p className="mt-2 text-sm text-muted-foreground font-light">{item.role}</p>
+                      <p className="text-xs text-muted-foreground/70 font-body mt-1">{item.date}</p>
+                    </div>
                     <p className="mt-2 text-sm text-muted-foreground font-light">{item.role}</p>
                   </div>
                 </motion.div>
@@ -97,6 +105,7 @@ const FormationSection = () => {
                       {item.institution}
                     </h4>
                     <p className="mt-2 text-sm text-muted-foreground font-light">{item.role}</p>
+                    <p className="text-xs text-muted-foreground/70 font-body mt-1">{item.date}</p>
                   </div>
                 </motion.div>
               ))}
