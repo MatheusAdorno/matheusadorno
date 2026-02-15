@@ -48,9 +48,7 @@ const AreasSection = () => {
                 strokeWidth={1.5}
               />
               <h3 className="font-heading text-base md:text-lg text-foreground mb-2 md:mb-3">{area.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed font-body font-light">
-                {area.description}
-              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed font-body font-light">{area.description}</p>
             </motion.div>
           ))}
         </div>

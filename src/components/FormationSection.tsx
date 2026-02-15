@@ -31,7 +31,6 @@ const FormationSection = () => {
   return (
     <section id="formacao" className="py-16 md:py-20 lg:py-24 bg-secondary">
       <div className="container mx-auto px-6 lg:px-16">
-        {/* Título principal */}
         <motion.h2
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -41,10 +40,7 @@ const FormationSection = () => {
           Formação e Experiência
         </motion.h2>
 
-        {/* ===================== */}
-        {/* FORMAÇÃO ACADÊMICA */}
-        {/* ===================== */}
-
+        {/* Formação Acadêmica */}
         <div className="max-w-3xl mx-auto mb-16">
           <h3 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-8 text-center">
             Formação Acadêmica
@@ -73,10 +69,7 @@ const FormationSection = () => {
           </div>
         </div>
 
-        {/* ===================== */}
-        {/* EXPERIÊNCIA COMPLEMENTAR */}
-        {/* ===================== */}
-
+        {/* Experiência Complementar */}
         <div className="max-w-2xl mx-auto">
           <h3 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-8 text-center">
             Experiência Complementar
@@ -90,10 +83,10 @@ const FormationSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex items-start gap-5"
+                className="flex items-start gap-6"
               >
-                <div className="flex-shrink-0 w-9 h-9 rounded-sm border border-border/50 flex items-center justify-center">
-                  <item.icon size={16} strokeWidth={1.5} className="text-muted-foreground" />
+                <div className="flex-shrink-0 w-10 h-10 rounded-sm border border-border flex items-center justify-center">
+                  <item.icon size={18} strokeWidth={1.5} className="text-muted-foreground" />
                 </div>
 
                 <div>
