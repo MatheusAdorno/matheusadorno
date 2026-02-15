@@ -18,12 +18,12 @@ const complementary = [
   {
     icon: Building2,
     institution: "Hospital Israelita Albert Einstein",
-    role: "Iniciação Científica — PROADI-SUS",
+    role: "Iniciação Científica em Inteligência Artificial — PROADI-SUS",
   },
   {
     icon: Lightbulb,
     institution: "Eretz.bio",
-    role: "Inovação em Saúde",
+    role: "Estágio em Inovação em Saúde",
   },
 ];
 
