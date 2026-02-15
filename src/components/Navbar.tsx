@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Sobre", href: "#sobre" },
+  { label: "Formação", href: "#formacao" },
   { label: "Áreas", href: "#areas" },
   { label: "Visão", href: "#visao" },
 ];
@@ -13,8 +14,10 @@ const Navbar = () => {
 
   const handleClick = (href: string) => {
     setOpen(false);
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => {
+      const el = document.querySelector(href);
+      el?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
   };
 
   return (
@@ -31,7 +34,6 @@ const Navbar = () => {
           Dr. Matheus Adorno
         </a>
 
-        {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <button
@@ -44,7 +46,6 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile hamburger */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden p-2 text-foreground"
@@ -54,7 +55,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <motion.div

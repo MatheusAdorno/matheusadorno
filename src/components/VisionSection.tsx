@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const VisionSection = () => {
   return (
-    <section id="visao" className="py-20 md:py-28 lg:py-40">
+    <section id="visao" className="py-20 md:py-28 lg:py-36">
       <div className="container mx-auto px-4 sm:px-6 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
