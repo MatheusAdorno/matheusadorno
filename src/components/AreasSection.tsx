@@ -21,7 +21,7 @@ const areas = [
 
 const AreasSection = () => {
   return (
-    <section id="formacao" className="py-16 md:py-20 lg:py-24 bg-secondary">
+    <section id="areas" className="py-16 md:py-20 lg:py-24 bg-secondary">
       <div className="container mx-auto px-6 lg:px-16">
         <motion.h2
           initial={{ opacity: 0 }}
