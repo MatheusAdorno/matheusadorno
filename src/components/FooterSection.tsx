@@ -2,10 +2,10 @@ import { Linkedin, Instagram } from "lucide-react";
 
 const FooterSection = () => {
   return (
-    <footer className="py-16 border-t border-border">
-      <div className="container mx-auto px-6 lg:px-16">
+    <footer className="py-12 md:py-16 border-t border-border">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-16">
         <div className="flex flex-col items-center text-center space-y-4">
-          <p className="font-heading text-lg text-foreground">
+          <p className="font-heading text-base md:text-lg text-foreground">
             Matheus Ribeiro Adorno Silva
           </p>
           <p className="text-sm text-muted-foreground font-body">
