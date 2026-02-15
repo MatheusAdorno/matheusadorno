@@ -6,13 +6,13 @@ const education = [
     icon: Eye,
     institution: "Instituto Suel Abujamra",
     role: "Residência Médica em Oftalmologia",
-    date: "2025–2028",
+    date: "2026–2029",
   },
   {
     icon: GraduationCap,
     institution: "Faculdade Israelita de Ciências da Saúde Albert Einstein",
     role: "Graduação em Medicina",
-    date: "2019–2024",
+    date: "2018–2024",
   },
 ];
 
@@ -21,13 +21,13 @@ const complementary = [
     icon: Building2,
     institution: "Hospital Israelita Albert Einstein",
     role: "Iniciação Científica em Inteligência Artificial — PROADI-SUS",
-    date: "2021–2023",
+    date: "2022–2024",
   },
   {
     icon: Lightbulb,
     institution: "Eretz.bio",
     role: "Estágio em Inovação em Saúde",
-    date: "2022",
+    date: "2023",
   },
 ];
 
