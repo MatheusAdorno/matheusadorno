@@ -51,14 +51,9 @@ const HeroSection = () => {
             <div className="relative w-full max-w-sm aspect-[2/3] bg-secondary rounded-sm overflow-hidden">
               <img
                 src={doctorPlaceholder}
-                alt="Foto profissional — substituir posteriormente"
+                alt="Dr. Matheus Ribeiro Adorno Silva"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute bottom-4 left-4 right-4 text-center">
-                <span className="text-xs font-body tracking-widest uppercase text-muted-foreground bg-background/80 backdrop-blur-sm px-3 py-1.5 rounded-sm">
-                  Foto profissional
-                </span>
-              </div>
             </div>
           </motion.div>
         </div>
