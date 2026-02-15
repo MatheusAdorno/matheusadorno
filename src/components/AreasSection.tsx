@@ -21,18 +21,18 @@ const areas = [
 
 const AreasSection = () => {
   return (
-    <section className="py-24 lg:py-32 bg-secondary">
-      <div className="container mx-auto px-6 lg:px-16">
+    <section id="areas" className="py-16 md:py-24 lg:py-32 bg-secondary">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-16">
         <motion.h2
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="font-heading text-sm tracking-[0.2em] uppercase text-muted-foreground mb-16 text-center"
+          className="font-heading text-sm tracking-[0.2em] uppercase text-muted-foreground mb-10 md:mb-16 text-center"
         >
           Áreas de Interesse
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
           {areas.map((area, i) => (
             <motion.div
               key={area.title}
@@ -40,14 +40,14 @@ const AreasSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="group p-8 bg-background rounded-sm border border-border transition-all duration-300 hover:border-accent/30 hover:shadow-sm"
+              className="group p-6 md:p-8 bg-background rounded-sm border border-border transition-all duration-300 hover:border-accent/30 hover:shadow-sm"
             >
               <area.icon
-                className="text-accent mb-6 transition-colors duration-300 group-hover:text-primary"
+                className="text-accent mb-4 md:mb-6 transition-colors duration-300 group-hover:text-primary"
                 size={24}
                 strokeWidth={1.5}
               />
-              <h3 className="font-heading text-lg text-foreground mb-3">{area.title}</h3>
+              <h3 className="font-heading text-base md:text-lg text-foreground mb-2 md:mb-3">{area.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed font-body font-light">
                 {area.description}
               </p>
