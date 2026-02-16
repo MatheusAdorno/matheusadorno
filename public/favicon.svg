@@ -1,0 +1,19 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <style><![CDATA[
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+    .text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 220px;
+      fill: #111111;
+    }
+  ]]></style>
+
+  <!-- Círculo externo -->
+  <circle cx="256" cy="256" r="240" fill="white"/>
+
+  <!-- Texto central -->
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" class="text">
+    MA
+  </text>
+</svg>
