@@ -18,8 +18,8 @@ const HeroSection = () => {
               Oftalmologia guiada por evidências, tecnologia e educação.
             </h1>
             <p className="mt-5 md:mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto md:mx-0 font-body font-light">
-              Residente em Oftalmologia no Instituto Suel Abujamra, com formação em pesquisa, ciência de dados e
-              inovação em saúde.{" "}
+              Residente em Oftalmologia no Instituto Suel Abujamra, com atuação em pesquisa, ciência de dados e inovação
+              em saúde.{" "}
             </p>
 
             <div className="mt-8 md:mt-10 flex flex-wrap justify-center md:justify-start gap-3 md:gap-4">
