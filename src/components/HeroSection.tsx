@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import doctorPlaceholder from "@/assets/doctor-placeholder.jpg";
 
-const buttons = [{ label: "Para Pacientes" }, { label: "Para Médicos" }, { label: "Projetos Tecnológicos" }];
+const buttons = [{ label: "Para Pacientes" }, { label: "Para Médicos" }, { label: "Inovação em Saúde" }];
 
 const HeroSection = () => {
   return (
