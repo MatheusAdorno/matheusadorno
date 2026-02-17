@@ -15,13 +15,13 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Gerador de Flashcards com IA",
+    title: "Anki Forge – Gerador Inteligente de Flashcards para Medicina",
     description:
-      "Plataforma que permite o upload de PDFs e gera automaticamente flashcards prontos para importar no Anki. Ideal para estudantes de medicina que querem otimizar a revisão de conteúdos densos.",
-    tags: ["IA", "React", "Anki", "PDF"],
+      "Plataforma que transforma PDFs médicos em flashcards estruturados, otimizados para active recall e spaced repetition. Desenvolvido para estudantes e residentes que desejam estudar de forma mais inteligente, não apenas mais intensa.",
+    tags: ["IA", "PDF", "Anki", "Educação Médica"],
     status: "Ativo",
     icon: <Brain size={20} strokeWidth={1.5} />,
-    url: "#",
+    url: "https://ankiforge.lovable.app/",
   },
 ];
 
@@ -33,9 +33,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
     className="border border-border rounded-sm p-6 md:p-8 bg-card hover:border-accent/40 transition-colors duration-300"
   >
     <div className="flex items-start justify-between mb-4">
-      <div className="p-2.5 bg-secondary rounded-sm text-foreground">
-        {project.icon}
-      </div>
+      <div className="p-2.5 bg-secondary rounded-sm text-foreground">{project.icon}</div>
       <Badge
         variant={project.status === "Ativo" ? "default" : "secondary"}
         className="text-[10px] tracking-wider uppercase font-body"
@@ -44,13 +42,9 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       </Badge>
     </div>
 
-    <h3 className="font-heading text-lg md:text-xl text-foreground mb-3">
-      {project.title}
-    </h3>
+    <h3 className="font-heading text-lg md:text-xl text-foreground mb-3">{project.title}</h3>
 
-    <p className="text-sm text-muted-foreground font-body font-light leading-relaxed mb-5">
-      {project.description}
-    </p>
+    <p className="text-sm text-muted-foreground font-body font-light leading-relaxed mb-5">{project.description}</p>
 
     <div className="flex flex-wrap gap-2 mb-6">
       {project.tags.map((tag) => (
