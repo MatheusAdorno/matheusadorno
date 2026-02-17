@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import doctorPlaceholder from "@/assets/doctor-placeholder.jpg";
-
-const buttons = [{ label: "Para Pacientes" }, { label: "Para Médicos" }, { label: "Projetos" }];
 
 const HeroSection = () => {
   return (
@@ -23,20 +22,32 @@ const HeroSection = () => {
             </p>
 
             <div className="mt-8 md:mt-10 flex flex-wrap justify-center md:justify-start gap-3 md:gap-4">
-              {buttons.map((btn, i) => (
+              {["Para Pacientes", "Para Médicos"].map((label, i) => (
                 <motion.button
-                  key={btn.label}
+                  key={label}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
                   className="relative px-5 md:px-6 py-2.5 md:py-3 text-sm font-body font-medium tracking-wide border border-border text-foreground rounded-sm transition-all duration-300 hover:border-accent/50 hover:shadow-sm"
                 >
-                  {btn.label}
+                  {label}
                   <span className="absolute -top-2 -right-2 px-1.5 py-0.5 text-[10px] font-body font-medium tracking-wider uppercase bg-muted text-muted-foreground rounded-sm leading-none">
                     Em breve
                   </span>
                 </motion.button>
               ))}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
+                <Link
+                  to="/projetos"
+                  className="inline-block px-5 md:px-6 py-2.5 md:py-3 text-sm font-body font-medium tracking-wide border border-border text-foreground rounded-sm transition-all duration-300 hover:border-accent/50 hover:shadow-sm"
+                >
+                  Projetos
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
 
