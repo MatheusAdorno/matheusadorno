@@ -1,19 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-  <style><![CDATA[
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
-    .text {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      font-size: 220px;
-      fill: #111111;
-    }
-  ]]></style>
+  
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+      text {
+        font-family: 'Playfair Display', serif;
+        font-weight: 500;
+      }
+    </style>
+  </defs>
 
-  <!-- Círculo externo -->
-  <circle cx="256" cy="256" r="240" fill="white"/>
+  <!-- Círculo branco -->
+  <circle cx="256" cy="256" r="256" fill="white"/>
 
-  <!-- Texto central -->
-  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" class="text">
-    MA
+  <!-- Letra M -->
+  <text
+    x="50%"
+    y="58%"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-size="420"
+    fill="#111111"
+    letter-spacing="1">
+    M
   </text>
+
 </svg>
