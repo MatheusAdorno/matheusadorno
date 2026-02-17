@@ -15,7 +15,7 @@ const HeroSection = () => {
             className="flex-1 text-center md:text-left"
           >
             <h1 className="font-heading text-3xl sm:text-4xl lg:text-[3.25rem] leading-tight tracking-tight text-foreground text-balance max-w-xl">
-              Oftalmologia guiada por evidências, tecnologia e educação.
+              Oftalmologia guiada por evidências, tecnologia e inovação.
             </h1>
             <p className="mt-5 md:mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto md:mx-0 font-body font-light">
               Residente em Oftalmologia no Instituto Suel Abujamra, com atuação em pesquisa, ciência de dados e inovação
