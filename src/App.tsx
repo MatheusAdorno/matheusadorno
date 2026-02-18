@@ -8,6 +8,7 @@ import Projetos from "./pages/Projetos";
 import Pacientes from "./pages/Pacientes";
 import Medicos from "./pages/Medicos";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
