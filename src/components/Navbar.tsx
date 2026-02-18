@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Separator } from "@/components/ui/separator";
 
 const sectionLinks = [
   { label: "Sobre", href: "#sobre" },
@@ -10,9 +11,16 @@ const sectionLinks = [
   { label: "Visão", href: "#visao" },
 ];
 
+const pageLinks = [
+  { label: "Projetos", to: "/projetos", enabled: true },
+  { label: "Pacientes", to: "/pacientes", enabled: false },
+  { label: "Médicos", to: "/medicos", enabled: false },
+];
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHome = location.pathname === "/";
 
   const handleSectionClick = (href: string) => {
@@ -23,7 +31,7 @@ const Navbar = () => {
         el?.scrollIntoView({ behavior: "smooth" });
       }, 100);
     } else {
-      window.location.href = "/" + href;
+      navigate("/" + href);
     }
   };
 
@@ -37,6 +45,7 @@ const Navbar = () => {
           Dr. Matheus Adorno
         </Link>
 
+        {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {sectionLinks.map((link) => (
             <button
@@ -47,12 +56,34 @@ const Navbar = () => {
               {link.label}
             </button>
           ))}
-          <Link
-            to="/projetos"
-            className="text-sm font-body text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Projetos
-          </Link>
+
+          <Separator orientation="vertical" className="h-4 bg-border/50" />
+
+          {pageLinks.map((link) =>
+            link.enabled ? (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`text-sm font-body transition-colors ${
+                  location.pathname === link.to
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <span
+                key={link.to}
+                className="text-sm font-body text-muted-foreground opacity-60 cursor-default flex items-center gap-1.5"
+              >
+                {link.label}
+                <span className="text-[10px] text-muted-foreground/80 border border-border/60 rounded px-1 py-0.5 leading-none">
+                  Em breve
+                </span>
+              </span>
+            )
+          )}
         </div>
 
         <button
@@ -64,6 +95,7 @@ const Navbar = () => {
         </button>
       </div>
 
+      {/* Mobile */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -82,13 +114,39 @@ const Navbar = () => {
                   {link.label}
                 </button>
               ))}
-              <Link
-                to="/projetos"
-                onClick={() => setOpen(false)}
-                className="text-sm font-body text-muted-foreground hover:text-foreground transition-colors text-left"
-              >
-                Projetos
-              </Link>
+
+              <Separator className="my-1" />
+
+              <span className="text-[10px] font-body text-muted-foreground/60 uppercase tracking-widest">
+                Páginas
+              </span>
+
+              {pageLinks.map((link) =>
+                link.enabled ? (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    onClick={() => setOpen(false)}
+                    className={`text-sm font-body transition-colors text-left ${
+                      location.pathname === link.to
+                        ? "text-foreground"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <span
+                    key={link.to}
+                    className="text-sm font-body text-muted-foreground opacity-60 cursor-default flex items-center gap-1.5"
+                  >
+                    {link.label}
+                    <span className="text-[10px] text-muted-foreground/80 border border-border/60 rounded px-1 py-0.5 leading-none">
+                      Em breve
+                    </span>
+                  </span>
+                )
+              )}
             </div>
           </motion.div>
         )}
