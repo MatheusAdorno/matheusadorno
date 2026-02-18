@@ -1,38 +1,37 @@
 
-# Pagina de Projetos
+
+# Refinamento da Navbar + Links de Paginas em Construcao
 
 ## Objetivo
-Criar uma pagina dedicada `/projetos` acessivel pelo botao "Projetos" na Hero Section, listando projetos tecnologicos com o primeiro sendo o gerador de flashcards com IA.
+Reorganizar a navbar para separar visualmente links de secao (scroll na home) dos links de paginas, e adicionar links para "Pacientes" e "Medicos" com indicacao de "Em breve".
 
-## Mudancas
+## Mudancas no `src/components/Navbar.tsx`
 
-### 1. Nova pagina `src/pages/Projetos.tsx`
-- Reutilizar o Navbar e FooterSection existentes para manter consistencia visual
-- Header minimalista com titulo "Projetos" e subtitulo breve sobre a interseccao medicina + tecnologia
-- Grid/lista de cards de projetos, cada um com:
-  - Nome do projeto
-  - Descricao concisa (2-3 linhas)
-  - Tags de tecnologia (ex: "IA", "React", "Anki")
-  - Status (Ativo / Em desenvolvimento)
-  - Botao "Acessar" com link externo (ou placeholder se ainda nao tiver URL publica)
-- Primeiro projeto: **Gerador de Flashcards com IA** — upload de PDFs e geracao automatica de flashcards para Anki
-- Design consistente com a estetica minimalista do site (mesmas fontes, cores, espacamentos)
-- Animacoes suaves com framer-motion (fade-in nos cards)
+### Desktop
+- Manter os links de secao (Sobre, Formacao, Areas, Visao) agrupados
+- Adicionar um separador vertical sutil (`border-l border-border/50`) entre os links de secao e os links de pagina
+- Apos o separador, listar: **Projetos**, **Pacientes**, **Medicos**
+- "Pacientes" e "Medicos" terao uma badge discreta "Em breve" ao lado (texto pequeno, estilo `text-muted-foreground`, sem link funcional — serao `<span>` com `cursor-default` e `opacity-60`)
+- "Projetos" permanece como `Link` funcional para `/projetos`
+- Quando o usuario esta em `/projetos`, o link fica com estilo ativo (`text-foreground` em vez de `text-muted-foreground`)
 
-### 2. Atualizar `src/App.tsx`
-- Adicionar rota `/projetos` apontando para a nova pagina
+### Mobile (hamburger)
+- Separar os dois grupos com um `<Separator />` horizontal fino
+- Adicionar um label discreto "Paginas" em texto pequeno e uppercase acima do grupo de links de pagina
+- "Pacientes" e "Medicos" aparecem com a mesma indicacao "Em breve" e sem acao de clique
+- Fechar o menu ao clicar em qualquer link funcional
 
-### 3. Atualizar `src/components/HeroSection.tsx`
-- O botao "Projetos" passa a ser um link funcional para `/projetos` usando `react-router-dom`
-- Remover a badge "Em breve" apenas desse botao (manter nos outros dois)
+### Navegacao entre paginas
+- Substituir `window.location.href` por `useNavigate` do react-router para evitar reload completo ao clicar em links de secao estando fora da home
 
-### 4. Atualizar `src/components/Navbar.tsx`
-- Adicionar link "Projetos" na navegacao, apontando para `/projetos`
+### Paginas placeholder
+- Criar paginas simples `src/pages/Pacientes.tsx` e `src/pages/Medicos.tsx` com layout "Em construcao" (Navbar + mensagem central + Footer)
+- Por enquanto, os links na navbar NAO apontam para essas paginas (ficam desabilitados com badge "Em breve")
+- As rotas serao adicionadas em `src/App.tsx` para uso futuro
 
-## Detalhes Tecnicos
-- Usar `Link` ou `useNavigate` do `react-router-dom` para navegacao
-- Componente `ProjectCard` interno na pagina para encapsular cada projeto
-- Dados dos projetos definidos como array estatico (sem backend por enquanto)
-- Tags usando o componente `Badge` ja existente no projeto
-- Icones do `lucide-react` para complementar visualmente cada card
-- Pagina responsiva: cards em coluna no mobile, grid no desktop
+## Detalhes tecnicos
+- Usar `Separator` do projeto (`@radix-ui/react-separator`) para divisores
+- Usar `useNavigate` + `useLocation` do `react-router-dom`
+- Badge "Em breve" implementada inline como `<span>` estilizado (sem componente extra)
+- Paginas placeholder usam os mesmos `Navbar` e `FooterSection` para consistencia
+
