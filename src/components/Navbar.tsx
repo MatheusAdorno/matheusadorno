@@ -4,7 +4,6 @@ import { Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 const pageLinks = [
-  { label: "Início", to: "/", enabled: true },
   { label: "Projetos", to: "/projetos", enabled: true },
   { label: "Pacientes", to: "/pacientes", enabled: false },
   { label: "Médicos", to: "/medicos", enabled: false },
@@ -25,30 +24,43 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-10">
           {pageLinks.map((link) =>
             link.enabled ? (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                className="relative text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-              >
+              <NavLink key={link.to} to={link.to} className="relative text-sm font-medium transition-colors">
                 {({ isActive }) => (
                   <span className="relative">
-                    <span className={isActive ? "text-foreground" : "text-muted-foreground"}>{link.label}</span>
+                    <span className={isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"}>
+                      {link.label}
+                    </span>
 
                     {isActive && (
                       <motion.div
                         layoutId="navbar-indicator"
                         className="absolute -bottom-2 left-0 right-0 h-[2px] bg-foreground rounded-full"
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 380,
+                          damping: 30,
+                        }}
                       />
                     )}
                   </span>
                 )}
               </NavLink>
             ) : (
-              <span key={link.to} className="text-sm text-muted-foreground/40 flex items-center gap-2 cursor-default">
+              <div key={link.to} className="relative group text-sm font-medium text-muted-foreground/40 cursor-default">
                 {link.label}
-                <span className="text-[10px] uppercase tracking-widest">• em breve</span>
-              </span>
+
+                {/* Tooltip */}
+                <div
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 
+                                opacity-0 group-hover:opacity-100
+                                transition-opacity duration-200
+                                pointer-events-none"
+                >
+                  <div className="bg-foreground text-background text-xs px-2 py-1 rounded-md whitespace-nowrap shadow-md">
+                    Em breve
+                  </div>
+                </div>
+              </div>
             ),
           )}
         </div>
@@ -59,7 +71,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -76,15 +88,17 @@ export default function Navbar() {
                     to={link.to}
                     onClick={() => setOpen(false)}
                     className={({ isActive }) =>
-                      `text-sm transition-colors ${isActive ? "text-foreground font-medium" : "text-muted-foreground"}`
+                      `text-sm ${isActive ? "text-foreground font-medium" : "text-muted-foreground"}`
                     }
                   >
                     {link.label}
                   </NavLink>
                 ) : (
-                  <span key={link.to} className="text-sm text-muted-foreground/40">
-                    {link.label} • em breve
-                  </span>
+                  <div className="relative group text-sm text-muted-foreground/40">
+                    {link.label}
+
+                    <div className="mt-1 text-xs opacity-70">Em breve</div>
+                  </div>
                 ),
               )}
             </div>
